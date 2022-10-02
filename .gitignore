@@ -1,0 +1,47 @@
+*.swp
+*.pyc
+logs/
+data/
+
+# log or working files
+work_dirs/
+
+# checkpoints
+snapshots/
+
+# pretrain weights
+models/weights/
+pretrained_pool/
+pretrained_pool
+
+# pseudo data
+pseudo_data/
+
+# files in root folder
+/*.pth
+/*.png
+/*.npy
+
+# python cache files
+__pycache__/
+*.pyc
+
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.pyd
+*.so
+*.dll
+*.egg-info/
+build/
+dist/
+wheels/
+
+# keras/pytorch/python/numpy formats
+*.h5
+*.pth
+*.pkl
+*.npy
+*.ts
+model_ts*.txt
