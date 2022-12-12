@@ -50,6 +50,6 @@ class Tweets(Dataset):
         embedding = torch.as_tensor(embedding, dtype=torch.float32)
         label = torch.as_tensor(np.ascontiguousarray(label, dtype=np.int64))
 
-        dataset_dict = {'txt': embedding, 'txt_gt': label, 'sent_len': tokens}
+        dataset_dict = {'txt': embedding, 'txt_gt': label}
 
         return dataset_dict
