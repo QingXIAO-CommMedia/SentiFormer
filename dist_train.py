@@ -15,15 +15,13 @@ from core import (get_arguments, cfg, cfg_from_file, cfg_from_list, is_enabled, 
 from core.checkpointer import Checkpointer
 from core.writer import Writer
 from core.eval import evaluate
-from datasets import Tweets, Twitter
+from datasets import Tweets
 
 
 def build_dataset(cfg, split):
     dataset_name = cfg.DATASET.NAME
     if dataset_name == 'tweets':
         dataset = Tweets(sent_len=cfg.DATASET.SENT_LEN, split=split)
-    elif dataset_name == 'twitter':
-        dataset = Twitter(split=split)
 
     return dataset
 

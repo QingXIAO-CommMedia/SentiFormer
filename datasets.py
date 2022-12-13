@@ -24,6 +24,8 @@ class Tweets(Dataset):
 
     CLASS_TABLE = {'negative': 0, 'neutral': 1, 'positive': 2}
 
+    REVERSE_CLASS_TABLE = {0: 'negative', 1: 'neutral', 2: 'positive'}
+
     def __init__(self, sent_len, data_path='data/Tweets.csv', split='train'):
         self.sent_len = sent_len
         self.data = pd.read_csv(data_path)
@@ -50,6 +52,6 @@ class Tweets(Dataset):
         embedding = torch.as_tensor(embedding, dtype=torch.float32)
         label = torch.as_tensor(np.ascontiguousarray(label, dtype=np.int64))
 
-        dataset_dict = {'txt': embedding, 'txt_gt': label, 'sent_len': tokens}
+        dataset_dict = {'txt': embedding, 'txt_gt': label}
 
         return dataset_dict

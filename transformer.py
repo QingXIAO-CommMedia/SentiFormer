@@ -1,6 +1,6 @@
 import math
 import copy
-from typing import Callable, Optional, Union, List
+from typing import Optional
 
 import torch
 import torch.nn as nn

@@ -88,7 +88,6 @@ class SentiFormer(nn.Module):
 
     def forward(self, batched_input):
         txt = batched_input['txt']
-        txt_gt = batched_input['txt_gt']
 
         txt_feats, txt_feats_word = self.txt_backbone(txt)
         pos = self.pe_layer(txt_feats)
@@ -97,6 +96,7 @@ class SentiFormer(nn.Module):
         logits = self.classifier(txt_feats)
 
         if self.training:
+            txt_gt = batched_input['txt_gt']
             losses = {}
             losses['loss_cls'] = F.cross_entropy(logits, txt_gt[:, 0])
 

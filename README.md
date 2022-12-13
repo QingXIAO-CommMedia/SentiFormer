@@ -23,6 +23,11 @@ training for tweets dataset:
 2. Put `Tweets.csv` into `data/`;
 3. Running `python dist_train.py --cfg configs/tweets/sentiformer_sl15_sgd-lr1e-3_bs256.yaml`;
 
+inference for tweets dataset:
+
+1. Suppose your have already trained a converged model at `work_dirs/tweets/sentiformer_sl15_sgd-lr1e-3_bs256/epoch003_iter0000255_score0.557.pth`;
+2. Running `python dist_infer.py --cfg configs/tweets/sentiformer_sl30_sgd-lr1e-4_bs256.yaml --resume work_dirs/tweets/sentiformer_sl15_sgd-lr1e-3_bs256/epoch003_iter0000255_score0.557.pth --input_text "I'm happy."` (--input_text [the text you want to judge sentiment])
+
 ## Dataset
 
 [Twitter Tweets Sentiment Dataset](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset)
